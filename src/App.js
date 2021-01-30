@@ -11,17 +11,17 @@ const Item = (props) => {
   const { item } = props;
 
   return (
-    <article className="bg-white rounded-md p-4">
+    <article className="bg-white rounded-md p-4 flex flex-col">
       <h3 className="font-bold mb-4 text-lg flex items-center justify-between">
-        {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-2 box-content flex-none" size={16} />}
+        {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-1.5 box-content flex-none" size={16} />}
       </h3>
-      <p className="text-gray-700">{item.description}</p>
+      <p className="text-gray-700 flex-grow">{item.description}</p>
       <div className="mt-6 flex items-center justify-between">
         <p className="flex items-center text-purple-500">
           {item.players} <Users className="ml-2" size={24} />
         </p>
-        <a className="flex-none px-4 py-2 rounded-full text-white bg-purple-500 font-bold" href={item.link} target="_blank" rel="noreferrer noopener">
-          View Item
+        <a className="flex-none px-4 py-2 rounded-full text-white bg-purple-500 hover:bg-purple-600 font-bold" href={item.link} target="_blank" rel="noreferrer noopener">
+          Visit Website
         </a>
       </div>
     </article>
@@ -61,7 +61,7 @@ function App() {
         <h2 className="text-center text-gray-200 text-lg">
           No more boring online hangout sessions, find something&nbsp;
           <Sparkles>
-            <span className="text-purple-500 uppercase">fun</span>
+            <span className="text-purple-500 uppercase text-xl">fun</span>
           </Sparkles>
           &nbsp;to do!
         </h2>

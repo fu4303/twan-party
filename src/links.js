@@ -11,7 +11,21 @@ const Links = [
       },
       {
         title: "Boggle eWord",
-        description: "eWord Challenge is an online reboot of Boggle word game available in English, Spanish, Filipino and French.",
+        description: "eWord Challenge.",
+        link: "https://www.ewordchallenge.net/",
+        players: "2+",
+        paid: true,
+      },
+      {
+        title: "Boggle eWord",
+        description: "eWord Challenge.",
+        link: "https://www.ewordchallenge.net/",
+        players: "2+",
+        paid: true,
+      },
+      {
+        title: "Boggle eWord",
+        description: "eWord Challenge.",
         link: "https://www.ewordchallenge.net/",
         players: "2+",
         paid: true,

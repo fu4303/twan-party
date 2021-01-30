@@ -8,7 +8,7 @@ const freeItems = Links.map((cat) => {
 });
 
 const Item = (props) => {
-  const { item } = props;
+  let { item } = props;
 
   return (
     <article className="bg-white rounded-md p-4 flex flex-col">
@@ -28,6 +28,15 @@ const Item = (props) => {
   );
 };
 
+const Items = (props) => {
+  let { items } = props;
+  items = items.sort((a, b) => a.title.localeCompare(b.title));
+
+  return items.map((item, i) => {
+    return <Item item={item} key={i} />;
+  });
+};
+
 const Category = (props) => {
   const { category } = props;
 
@@ -35,16 +44,15 @@ const Category = (props) => {
     <section className="mb-16">
       <h2 className="text-white text-center text-2xl font-bold mb-8">{category.name}</h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {category.items.map((item, i) => {
-          return <Item item={item} key={i} />;
-        })}
+        <Items items={category.items} />
       </div>
     </section>
   );
 };
 
 const Categories = (props) => {
-  const { categories } = props;
+  let { categories } = props;
+  categories = categories.sort((a, b) => a.name.localeCompare(b.name));
 
   return categories.map((category, i) => {
     return <Category category={category} key={i} />;

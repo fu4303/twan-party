@@ -32,8 +32,8 @@ const Category = (props) => {
   const { category } = props;
 
   return (
-    <section className="mb-8">
-      <h2 className="text-white text-center text-2xl font-bold mb-4">{category.name}</h2>
+    <section className="mb-16">
+      <h2 className="text-white text-center text-2xl font-bold mb-8">{category.name}</h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {category.items.map((item, i) => {
           return <Item item={item} key={i} />;

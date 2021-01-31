@@ -65,7 +65,9 @@ function App() {
   return (
     <>
       <header className="container mx-auto px-4 py-32">
-        <h1 className="text-center text-white text-3xl font-bold mb-2">Twan.Party 🥳</h1>
+        <h1 className="text-center text-white text-3xl font-bold mb-2">
+          Twan.<span className="text-purple-500">Party</span> 🥳
+        </h1>
         <h2 className="text-center text-gray-200 text-lg">
           No more boring online hangout sessions, find something&nbsp;
           <Sparkles>

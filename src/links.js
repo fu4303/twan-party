@@ -112,6 +112,86 @@ const Links = [
       },
     ],
   },
+  {
+    name: "Other Games",
+    items: [
+      {
+        title: "Advanced Civilization",
+        description: "A web adaptation of the board game Advanced Civilization by Avalon Hill Games. Sign up, then add friends and create a game.",
+        link: "http://civ.rol-play.com/",
+        players: "2-8",
+        paid: false,
+      },
+      {
+        title: "Quiplash",
+        description: "Virtually just Quiplash from Jackbox. It’s free, and can have more players than Quiplash. Share room code.",
+        link: "https://qwiqwit.com/",
+        players: "3-12",
+        paid: false,
+      },
+      {
+        title: "Agricola",
+        description: "Twenty digitalized games available for free. Join the same game room, don’t have to sign up.",
+        link: "http://play-agricola.com/",
+        players: "1-5",
+        paid: false,
+      },
+      {
+        title: "Railroad Ink",
+        description: "A roll and write game where you draw routes on your board trying to connect the exits at its edges. The more you connect, the more points you make!",
+        link: "https://ondras.github.io/rri/",
+        players: "1+",
+        paid: false,
+      },
+      {
+        title: "Risk 'Warzone'",
+        description: "If you like Hasbro's RISK® game, you'll love Warzone! Play alone or with friends. Need to sign up. Can customize maps and rules.",
+        link: "https://www.warzone.com/",
+        players: "2+",
+        paid: false,
+      },
+      {
+        title: "Catan",
+        description: "Colonist.io is a web game alternative to the top selling board game Settlers of Catan. Create game and share a link.",
+        link: "https://colonist.io/",
+        players: "3-4",
+        paid: false,
+      },
+    ],
+  },
+  {
+    name: "Other",
+    items: [
+      {
+        title: "Jackbox",
+        description: "Collections of different party games. The host pays for it. Someone with the game streams. Other players don’t need to sign up or buy anything, instead they simply join the game with their devices.",
+        link: "https://jackbox.tv/",
+        players: "2-8",
+        paid: true,
+      },
+      {
+        title: "Keep Talking and Nobody Explodes",
+        description: "Fun co-op game that involves one person describing a bomb and others instructing how to defuse. Only the host with the bomb buys the game. Other players just need the bomb manual.",
+        link: "https://keeptalkinggame.com/",
+        players: "2+",
+        paid: true,
+      },
+      {
+        title: "Town of Salem",
+        description: "Similar to Mafia/Werewolf. There’s a bit to understanding with how it runs. Was free, now costs $5-$10 depending on platform (Steam, web, mobile). Classic is free on mobile (limited free goes per day).",
+        link: "https://www.blankmediagames.com/",
+        players: "2+",
+        paid: true,
+      },
+      {
+        title: "Air Console",
+        description: "Website with many different knock-off board games and video games. Players join with their phone as a controller, going on the app or the site.",
+        link: "https://www.airconsole.com/",
+        players: "2+",
+        paid: false,
+      },
+    ],
+  },
 ];
 
 export default Links;

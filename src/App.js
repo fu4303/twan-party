@@ -1,69 +1,11 @@
 import { useState, useEffect } from "react";
-import { User, Users, DollarSign, Minus, Plus, ExternalLink, GitHub, Twitter } from "react-feather";
-import Sparkles from "./sparkles";
+import { Minus, Plus } from "react-feather";
+
+import Header from "./Header";
+import Categories from "./Categories";
+import Footer from "./Footer";
 
 import Links from "./links";
-
-const Item = (props) => {
-  let { item } = props;
-
-  return (
-    <article className="flex flex-col p-4 bg-gray-800 rounded-md">
-      <h3 className="flex items-center justify-between mb-4 text-lg font-bold text-white">
-        {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-1.5 box-content flex-none text-black" size={16} />}
-      </h3>
-      <p className="flex-grow text-gray-400">{item.description}</p>
-      <div className="flex items-center justify-between mt-6">
-        <p className="flex items-center text-purple-500">
-          {item.players === "1+" ? <User className="mr-2" size={24} /> : <Users className="mr-2" size={24} />}
-          {item.players}
-        </p>
-        <a
-          className="relative inline-flex items-center flex-none px-4 py-2 font-bold text-white transition-all duration-300 bg-purple-700 rounded-full hover:pr-10 group hover:bg-purple-600"
-          href={item.link}
-          target="_blank"
-          rel="noreferrer noopener"
-          data-splitbee-event="External Link"
-          data-splitbee-event-type={item.title}
-        >
-          <span>Visit Website</span>
-          <ExternalLink className="-mt-0.5 absolute right-4 opacity-0 group-hover:opacity-100 transition duration-300 transform-gpu -translate-x-1	group-hover:translate-x-0" size={16} />
-        </a>
-      </div>
-    </article>
-  );
-};
-
-const Items = (props) => {
-  let { items } = props;
-  items = items.sort((a, b) => a.title.localeCompare(b.title));
-
-  return items.map((item, i) => {
-    return <Item item={item} key={i} />;
-  });
-};
-
-const Category = (props) => {
-  const { category } = props;
-
-  return (
-    <section className="mb-16">
-      <h2 className="mb-8 text-2xl font-bold text-center text-white">{category.name}</h2>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <Items items={category.items} />
-      </div>
-    </section>
-  );
-};
-
-const Categories = (props) => {
-  let { categories } = props;
-  categories = categories.sort((a, b) => a.name.localeCompare(b.name));
-
-  return categories.map((category, i) => {
-    return <Category category={category} key={i} />;
-  });
-};
 
 function App() {
   const [showFreeItems, setShowFreeItems] = useState(false);
@@ -127,13 +69,8 @@ function App() {
       return;
     }
 
-    // Return if number is above 100
-    if (value > 100) {
-      return;
-    }
-
-    // Return if number is below 0
-    if (value < 0) {
+    // Return if number is below 0 or above 100
+    if (value < 0 || value > 100) {
       return;
     }
 
@@ -151,18 +88,7 @@ function App() {
 
   return (
     <>
-      <header className="container px-4 py-32 mx-auto">
-        <h1 className="mb-2 text-3xl font-bold text-center text-white">
-          Twan.<span className="text-purple-500">Party</span> 🥳
-        </h1>
-        <h2 className="text-lg text-center text-gray-200">
-          No more boring online hangout sessions, find something&nbsp;
-          <Sparkles>
-            <span className="text-xl text-purple-500 uppercase">fun</span>
-          </Sparkles>
-          &nbsp;to do!
-        </h2>
-      </header>
+      <Header />
       <main className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
           <div className="flex items-center justify-between mb-8 md:justify-center">
@@ -212,29 +138,7 @@ function App() {
 
         <Categories categories={linksArray} />
       </main>
-      <footer>
-        <div className="container flex flex-col items-center px-4 py-16 mx-auto sm:flex-row">
-          <p className="flex items-center justify-center font-medium text-white md:justify-start">
-            <span className="ml-3 text-xl font-bold">Twan Mulder</span>
-          </p>
-          <p className="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-purple-500 sm:py-2 sm:mt-0">
-            © {new Date().getFullYear()} —
-            <a className="ml-1 text-gray-600 hover:text-purple-500" href="https://twitter.com/toktoktwan" rel="noopener noreferrer" target="_blank" data-splitbee-event="External Link" data-splitbee-event-type="Twitter">
-              @toktoktwan
-            </a>
-          </p>
-          <span className="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
-            <a className="ml-3 text-gray-500 hover:text-purple-500" href="https://github.com/twanmulder/twan.party" rel="noopener noreferrer" target="_blank" data-splitbee-event="External Link" data-splitbee-event-type="GitHub">
-              <GitHub size={16} />
-              <span className="sr-only">Go to GitHub profile</span>
-            </a>
-            <a className="ml-3 text-gray-500 hover:text-purple-500" href="https://twitter.com/toktoktwan" rel="noopener noreferrer" target="_blank" data-splitbee-event="External Link" data-splitbee-event-type="Twitter">
-              <Twitter size={16} />
-              <span className="sr-only">Go to Twitter profile</span>
-            </a>
-          </span>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

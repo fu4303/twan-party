@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Users, DollarSign, Minus, Plus } from "react-feather";
+import { User, Users, DollarSign, Minus, Plus, ExternalLink } from "react-feather";
 import Sparkles from "./sparkles";
 
 import Links from "./links";
@@ -15,10 +15,13 @@ const Item = (props) => {
       <p className="flex-grow text-gray-700">{item.description}</p>
       <div className="flex items-center justify-between mt-6">
         <p className="flex items-center text-purple-500">
-          {item.players} <Users className="ml-2" size={24} />
+          {item.players === "1+" ? <User className="mr-2" size={24} /> : <Users className="mr-2" size={24} />}
+
+          {item.players}
         </p>
-        <a className="flex-none px-4 py-2 font-bold text-white bg-purple-500 rounded-full hover:bg-purple-600" href={item.link} target="_blank" rel="noreferrer noopener">
-          Visit Website
+        <a className="relative inline-flex items-center flex-none px-4 py-2 font-bold text-white transition-all duration-300 bg-purple-500 rounded-full hover:pr-10 group hover:bg-purple-700" href={item.link} target="_blank" rel="noreferrer noopener">
+          <span>Visit Website</span>
+          <ExternalLink className="-mt-0.5 absolute right-4 opacity-0 group-hover:opacity-100 transition duration-300 transform-gpu -translate-x-0.5	group-hover:translate-x-0" size={16} />
         </a>
       </div>
     </article>

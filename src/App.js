@@ -18,7 +18,14 @@ const Item = (props) => {
           {item.players === "1+" ? <User className="mr-2" size={24} /> : <Users className="mr-2" size={24} />}
           {item.players}
         </p>
-        <a className="relative inline-flex items-center flex-none px-4 py-2 font-bold text-white transition-all duration-300 bg-purple-700 rounded-full hover:pr-10 group hover:bg-purple-600" href={item.link} target="_blank" rel="noreferrer noopener">
+        <a
+          className="relative inline-flex items-center flex-none px-4 py-2 font-bold text-white transition-all duration-300 bg-purple-700 rounded-full hover:pr-10 group hover:bg-purple-600"
+          href={item.link}
+          target="_blank"
+          rel="noreferrer noopener"
+          data-splitbee-event="External Link"
+          data-splitbee-event-type={item.title}
+        >
           <span>Visit Website</span>
           <ExternalLink className="-mt-0.5 absolute right-4 opacity-0 group-hover:opacity-100 transition duration-300 transform-gpu -translate-x-1	group-hover:translate-x-0" size={16} />
         </a>

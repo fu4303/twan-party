@@ -8,16 +8,16 @@ const Item = (props) => {
   let { item } = props;
 
   return (
-    <article className="bg-white rounded-md p-4 flex flex-col">
-      <h3 className="font-bold mb-4 text-lg flex items-center justify-between">
+    <article className="flex flex-col p-4 bg-white rounded-md">
+      <h3 className="flex items-center justify-between mb-4 text-lg font-bold">
         {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-1.5 box-content flex-none" size={16} />}
       </h3>
-      <p className="text-gray-700 flex-grow">{item.description}</p>
-      <div className="mt-6 flex items-center justify-between">
+      <p className="flex-grow text-gray-700">{item.description}</p>
+      <div className="flex items-center justify-between mt-6">
         <p className="flex items-center text-purple-500">
           {item.players} <Users className="ml-2" size={24} />
         </p>
-        <a className="flex-none px-4 py-2 rounded-full text-white bg-purple-500 hover:bg-purple-600 font-bold" href={item.link} target="_blank" rel="noreferrer noopener">
+        <a className="flex-none px-4 py-2 font-bold text-white bg-purple-500 rounded-full hover:bg-purple-600" href={item.link} target="_blank" rel="noreferrer noopener">
           Visit Website
         </a>
       </div>
@@ -39,7 +39,7 @@ const Category = (props) => {
 
   return (
     <section className="mb-16">
-      <h2 className="text-white text-center text-2xl font-bold mb-8">{category.name}</h2>
+      <h2 className="mb-8 text-2xl font-bold text-center text-white">{category.name}</h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <Items items={category.items} />
       </div>
@@ -142,21 +142,21 @@ function App() {
 
   return (
     <>
-      <header className="container mx-auto px-4 py-32">
-        <h1 className="text-center text-white text-3xl font-bold mb-2">
+      <header className="container px-4 py-32 mx-auto">
+        <h1 className="mb-2 text-3xl font-bold text-center text-white">
           Twan.<span className="text-purple-500">Party</span> 🥳
         </h1>
-        <h2 className="text-center text-gray-200 text-lg">
+        <h2 className="text-lg text-center text-gray-200">
           No more boring online hangout sessions, find something&nbsp;
           <Sparkles>
-            <span className="text-purple-500 uppercase text-xl">fun</span>
+            <span className="text-xl text-purple-500 uppercase">fun</span>
           </Sparkles>
           &nbsp;to do!
         </h2>
       </header>
-      <main className="container mx-auto px-4">
+      <main className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="flex items-center justify-between md:justify-center mb-8">
+          <div className="flex items-center justify-between mb-8 md:justify-center">
             <p className="text-white md:mr-4">Show free items only</p>
             <label className="switch">
               <input
@@ -170,20 +170,20 @@ function App() {
               <span className="slider"></span>
             </label>
           </div>
-          <div className="text-white flex items-center justify-between md:justify-center mb-8">
+          <div className="flex items-center justify-between mb-8 text-white md:justify-center">
             <p className="md:mr-4">
               How many people <span className="hidden md:inline">are playing</span>?
             </p>
             <div className="flex items-center select-none">
               <Minus
-                className="cursor-pointer hover:opacity-50 transition-opacity"
+                className="transition-opacity cursor-pointer hover:opacity-50"
                 onClick={(e) => {
                   handleAmountOfPlayersChange(e, "-");
                 }}
               />
               <label>
                 <input
-                  className="w-10 h-10 mx-4 text-xl rounded-md bg-gray-800 text-center appearance-none m-0 focus:outline-none focus:ring focus:ring-purple-500"
+                  className="w-10 h-10 m-0 mx-4 text-xl text-center bg-gray-800 rounded-md appearance-none focus:outline-none focus:ring focus:ring-purple-500"
                   style={amountOfPlayers === 0 ? { color: "#4b5563" } : null}
                   type="number"
                   name="people"
@@ -192,7 +192,7 @@ function App() {
                 />
               </label>
               <Plus
-                className="cursor-pointer hover:opacity-50 transition-opacity"
+                className="transition-opacity cursor-pointer hover:opacity-50"
                 onClick={(e) => {
                   handleAmountOfPlayersChange(e, "+");
                 }}

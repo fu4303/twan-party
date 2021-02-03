@@ -8,20 +8,19 @@ const Item = (props) => {
   let { item } = props;
 
   return (
-    <article className="flex flex-col p-4 bg-white rounded-md">
-      <h3 className="flex items-center justify-between mb-4 text-lg font-bold">
-        {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-1.5 box-content flex-none" size={16} />}
+    <article className="flex flex-col p-4 bg-gray-800 rounded-md">
+      <h3 className="flex items-center justify-between mb-4 text-lg font-bold text-white">
+        {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-1.5 box-content flex-none text-black" size={16} />}
       </h3>
-      <p className="flex-grow text-gray-700">{item.description}</p>
+      <p className="flex-grow text-gray-400">{item.description}</p>
       <div className="flex items-center justify-between mt-6">
         <p className="flex items-center text-purple-500">
           {item.players === "1+" ? <User className="mr-2" size={24} /> : <Users className="mr-2" size={24} />}
-
           {item.players}
         </p>
-        <a className="relative inline-flex items-center flex-none px-4 py-2 font-bold text-white transition-all duration-300 bg-purple-500 rounded-full hover:pr-10 group hover:bg-purple-700" href={item.link} target="_blank" rel="noreferrer noopener">
+        <a className="relative inline-flex items-center flex-none px-4 py-2 font-bold text-white transition-all duration-300 bg-purple-700 rounded-full hover:pr-10 group hover:bg-purple-600" href={item.link} target="_blank" rel="noreferrer noopener">
           <span>Visit Website</span>
-          <ExternalLink className="-mt-0.5 absolute right-4 opacity-0 group-hover:opacity-100 transition duration-300 transform-gpu -translate-x-0.5	group-hover:translate-x-0" size={16} />
+          <ExternalLink className="-mt-0.5 absolute right-4 opacity-0 group-hover:opacity-100 transition duration-300 transform-gpu -translate-x-1	group-hover:translate-x-0" size={16} />
         </a>
       </div>
     </article>

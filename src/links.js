@@ -157,6 +157,13 @@ const Links = [
         players: "3-4",
         paid: false,
       },
+      {
+        title: "Yahtzee",
+        description: "Play the classic Yahtzee for free online, by yourself or with up to 5 friends!",
+        link: "https://buddyboardgames.com/yahtzee",
+        players: "1-6",
+        paid: false,
+      },
     ],
   },
   {

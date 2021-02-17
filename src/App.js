@@ -102,6 +102,7 @@ function App() {
                 onChange={() => {
                   setShowFreeItems(!showFreeItems);
                 }}
+                data-splitbee-event="Toggle Show Free Items"
               />
               <span className="slider"></span>
             </label>
@@ -116,6 +117,7 @@ function App() {
                 onClick={(e) => {
                   handleAmountOfPlayersChange(e, "-");
                 }}
+                data-splitbee-event="Minus 1 Player"
               />
               <label>
                 <input
@@ -132,6 +134,7 @@ function App() {
                 onClick={(e) => {
                   handleAmountOfPlayersChange(e, "+");
                 }}
+                data-splitbee-event="Plus 1 Player"
               />
             </div>
           </div>

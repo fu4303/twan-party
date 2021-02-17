@@ -91,8 +91,8 @@ function App() {
     <>
       <Header />
       <main className="container px-4 mx-auto" layout>
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className="flex items-center justify-between mb-8 md:justify-center">
+        <div className="flex flex-col py-4 mb-8 md:flex-row md:justify-between md:items-center md:sticky md:top-0 md:z-10 md:bg-gray-900">
+          <div className="flex items-center justify-between md:justify-center">
             <p className="text-white md:mr-4">Show free items only</p>
             <label className="switch">
               <input
@@ -106,7 +106,7 @@ function App() {
               <span className="slider"></span>
             </label>
           </div>
-          <div className="flex items-center justify-between mb-8 text-white md:justify-center">
+          <div className="flex items-center justify-between text-white md:justify-center">
             <p className="md:mr-4">
               How many people <span className="hidden md:inline">are playing</span>?
             </p>

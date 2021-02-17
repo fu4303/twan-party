@@ -1,10 +1,11 @@
+import { motion, AnimateSharedLayout } from "framer-motion";
 import { DollarSign, User, Users, ExternalLink } from "react-feather";
 
 const Item = (props) => {
   let { item } = props;
 
   return (
-    <article className="flex flex-col p-4 bg-gray-800 rounded-md">
+    <motion.article className="flex flex-col p-4 bg-gray-800 rounded-md" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} layout>
       <h3 className="flex items-center justify-between mb-4 text-lg font-bold text-white">
         {item.title} {item.paid && <DollarSign className="bg-yellow-400 rounded-full p-1.5 box-content flex-none text-black" size={16} />}
       </h3>
@@ -26,7 +27,7 @@ const Item = (props) => {
           <ExternalLink className="-mt-0.5 absolute right-4 opacity-0 group-hover:opacity-100 transition duration-300 transform-gpu -translate-x-1	group-hover:translate-x-0" size={16} />
         </a>
       </div>
-    </article>
+    </motion.article>
   );
 };
 
@@ -34,7 +35,11 @@ export default function Items(props) {
   let { items } = props;
   items = items.sort((a, b) => a.title.localeCompare(b.title));
 
-  return items.map((item, i) => {
-    return <Item item={item} key={i} />;
-  });
+  return (
+    <AnimateSharedLayout type="crossfade">
+      {items.map((item, i) => {
+        return <Item item={item} key={i} />;
+      })}
+    </AnimateSharedLayout>
+  );
 }

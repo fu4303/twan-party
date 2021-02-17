@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Minus, Plus } from "react-feather";
+import { AnimateSharedLayout } from "framer-motion";
 
 import Header from "./Header";
 import Categories from "./Categories";
@@ -89,7 +90,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="container px-4 mx-auto">
+      <main className="container px-4 mx-auto" layout>
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
           <div className="flex items-center justify-between mb-8 md:justify-center">
             <p className="text-white md:mr-4">Show free items only</p>
@@ -135,8 +136,9 @@ function App() {
             </div>
           </div>
         </div>
-
-        <Categories categories={linksArray} />
+        <AnimateSharedLayout>
+          <Categories categories={linksArray} />
+        </AnimateSharedLayout>
       </main>
       <Footer />
     </>
